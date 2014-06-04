@@ -1,0 +1,24 @@
+{% extends "frame.twig" %}
+
+{% block header %}
+{% include "home_header.twig" %}
+{% endblock %}
+
+{% block content %}
+    <div class="jcarousel-wrapper">
+        <!-- Carousel -->
+        <div class="jcarousel">
+            <ul class="jcarousel">
+                <li title="About">{% include "about.twig" %}</li>
+                <li title="Subscribe">{% include "subscribe.twig" %}</li>
+                <li title="Events">{% include "events.twig" %}</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock %}

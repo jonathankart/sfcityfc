@@ -1,0 +1,48 @@
+<html>
+<head>
+
+    {% block head %}
+        <link rel="icon" href="/images/favicon.ico" />
+        <link href='http://fonts.googleapis.com/css?family=Lato|Oxygen:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+        <link rel="stylesheet" href="/css/sfcity.css" />
+
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jcarousel.min.js"></script>
+        <script type="text/javascript" src="/js/home.js"></script>
+        <title>SF City FC</title>
+    {% endblock %}
+</head>
+<body>
+<div id="header">{% block header %}{% endblock %}</div>
+<div id="body">
+    {% block body %}
+        <!-- Pagination -->
+        <div class="navMenu jcarousel-pagination">
+
+        </div>
+
+        <div class="sidebar">
+            {% include "sidebar.twig" %}
+        </div>
+        <div class="content-wrapper">
+            <div class="content-border content-border-l"></div>
+            <div class="content-border content-border-r"></div>
+
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div class="content-border content-border-l"></div>
+            <div class="content-border content-border-r"></div>
+        </div>
+    {% endblock %}
+</div>
+<div id="footer">
+    {% block footer %}
+        {% include "footer.twig" %}
+    {% endblock %}
+</div>
+</body>
+</html>
