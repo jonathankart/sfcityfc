@@ -1,6 +1,6 @@
 <?php
 
-$sfcityconfig['db'] = array(
+$sfcityconfig->db = array(
 	'driver'    => 'pdo_mysql',
 	'host'      => 'localhost',
 	'dbname'    => 'sfcityfc_prod',
