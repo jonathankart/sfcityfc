@@ -8,14 +8,14 @@ if(stripos(__DIR__,'/Users/jonathankart')!==false){
 	define('SFCITY_ENV','prod');
 }
 
-require_once __DIR__."/conf/".SFCITY_ENV."/db.php";
+require_once __DIR__."/../conf/".SFCITY_ENV."/db.php";
 
 $app = new Silex\Application();
 use Symfony\Component\Validator\Constraints as Assert;
 
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
-	'db.options' => $sfcityconfig['db']
+	'db.options' => $sfcityconfig->db
 ));
 
 
