@@ -1,2 +1,4 @@
 .idea
 conf/pw.php
+
+*.log
