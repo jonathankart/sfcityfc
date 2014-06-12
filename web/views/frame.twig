@@ -15,29 +15,34 @@
 </head>
 <body>
 <div id="header">{% block header %}{% endblock %}</div>
-<div id="body">
-    {% block body %}
-        <!-- Pagination -->
+<div id="bodyWrapper">
+
+    <div id="body">
         <div class="navMenu jcarousel-pagination">
 
         </div>
-
         <div class="sidebar">
             {% include "sidebar.twig" %}
         </div>
-        <div class="content-wrapper">
-            <div class="content-border content-border-l"></div>
-            <div class="content-border content-border-r"></div>
+        {% block body %}
+            <!-- Pagination -->
 
-            <div class="content">
-                {% block content %}
-                {% endblock %}
+
+
+            <div class="content-wrapper">
+                <div class="content-border content-border-l"></div>
+                <div class="content-border content-border-r"></div>
+
+                <div class="content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+
+                <div class="content-border content-border-l"></div>
+                <div class="content-border content-border-r"></div>
             </div>
-
-            <div class="content-border content-border-l"></div>
-            <div class="content-border content-border-r"></div>
-        </div>
-    {% endblock %}
+        {% endblock %}
+    </div>
 </div>
 <div id="footer">
     {% block footer %}

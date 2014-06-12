@@ -5,6 +5,7 @@
   font-weight: bold
 
 
+$d: 1px solid red
 
 $font-stack-header:    Chalet,Oxygen,Arial,Helvetica,sans-serif
 $font-stack-text:    Lato,Arial,Helvetica,sans-serif
@@ -25,6 +26,8 @@ $crest-width: 190px * 1.2
 $crest-height: 260px * 1.2
 $crest-overlap: 20px
 
+$body-width: 900px
+
 $content-width: 550px
 $content-padding:25px
 
@@ -44,17 +47,24 @@ body
   margin: 0
   padding: 0
 
-#body
+#bodyWrapper
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%, $body-gradient-color-start),color-stop($body-gradient-distance, $body-gradient-color-stop))
   background-image: -o-linear-gradient(bottom, $body-gradient-color-start 0%, $body-gradient-color-stop $body-gradient-distance )
   background-image: -moz-linear-gradient(bottom, $body-gradient-color-start 0%, $body-gradient-color-stop $body-gradient-distance )
   background-image: -webkit-linear-gradient(bottom, $body-gradient-color-start 0%, $body-gradient-color-stop $body-gradient-distance )
   background-image: -ms-linear-gradient(bottom, $body-gradient-color-start 0%, $body-gradient-color-stop $body-gradient-distance )
   background-image: linear-gradient(to bottom, $body-gradient-color-start 0%, $body-gradient-color-stop $body-gradient-distance )
+  padding-top: $crest-overlap + 10
+
+#body
+  width: $body-width
+  margin: auto
+  text-align: left
 
 
 
-.homeHeader
+
+.homeHeaderWrapper
   height: $crest-height - $crest-overlap
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $header-gradient-color-start),color-stop(1, $header-gradient-color-stop))
   background-image: -o-linear-gradient(bottom, $header-gradient-color-start 0%, $header-gradient-color-stop 100%)
@@ -65,6 +75,11 @@ body
   text-align: center
   color: $color-crest-primary
 
+.homeHeader
+  width: $body-width
+  margin-left: auto
+  margin-right: auto
+
 .homeHeader .tagline
   font-family: $font-stack-header
   font-size: 1em
@@ -73,15 +88,14 @@ body
 
 .homeHeader .tagline span
   display: block
-  width: 280px
 
 .homeHeader .tagline .a
   float: left
-  text-align: right
+  text-align: left
 
 .homeHeader .tagline .b
   float: right
-  text-align: left
+  text-align: right
 
 
 .homeHeader .name
@@ -90,17 +104,16 @@ body
 
 .homeHeader .name span
   display: block
-  width: 410px
   margin-top: -4.2em
   text-shadow: 0px 0px 1px #111
 
 .homeHeader .name .a
   float: left
-  text-align: right
+  text-align: left
 
 .homeHeader .name .b
   float: right
-  text-align: left
+  text-align: right
 
 
 
@@ -111,15 +124,11 @@ body
   height: $crest-height
 
 
-#body
-  text-align: center
-  padding-top: $crest-overlap + 10
-
 .sidebar
+  position: relative
   float: right
-  //border: 1px solid red
-  text-align: left
-  margin-right: 20px
+  //text-align: left
+
 
 .content-wrapper
   border-left: 2px solid $color-bold
@@ -161,14 +170,14 @@ body
   margin: 0 10px
 
 .socialWidget
-  height: 29px
+  clear: both
+  min-height: 29px
   margin-bottom: 10px
 
 .socialWidget a
   display: block
-  float: left
-  height: 29px
-  margin-left: 5px
+  margin-left: 34px
+
 
 
 .fbLogo
@@ -177,6 +186,7 @@ body
   background: url('/images/fb_logo.png') center center no-repeat
   height: 29px
   width: 29px
+
 
 .twitterLogo
   display: block
@@ -208,13 +218,13 @@ ul.jcarousel li
   width: $content-width - 2 * $content-padding
 
 .navMenu
-  margin-bottom: 25px
+  text-align: left
+  float: left
 
 .navMenu a
   font-size: 1.2em
   font-family: $font-stack-header
-  display: inline-block
-  margin: 0 100px
+  display: block
   color: $color-text
 
 .navMenu a.active
