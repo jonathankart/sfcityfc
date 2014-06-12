@@ -30,7 +30,7 @@ $app->post('/subscribe',function (Request $request) use ($app){
 		file_put_contents($app->config->mailchimp->log,date('Y-m-d H:i:s').",$email,$name,$phone\n",FILE_APPEND);
 		try{
 			$mc = new Mailchimp($app->config->mailchimp->api_key);
-			$mc->lists->subscribe($app->config->mailchimp->lists->newsletter, array('email'=>$email),array('name'=>$name,'phone'=>$phone),'html',false,true,true,true);
+			$mc->lists->subscribe($app->config->mailchimp->lists->newsletter, array('email'=>$email),array('name'=>$name,'phone'=>$phone),'html',false,true,true,false);
 			$results['success'] = true;
 		}catch (Mailchimp_Error $e){
 			$results['success'] = false;
