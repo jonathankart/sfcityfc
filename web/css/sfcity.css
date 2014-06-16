@@ -61,15 +61,15 @@ body {
 
 .homeHeader .tagline span {
   display: block;
-  width: 300px; }
+  width: 336px; }
 
 .homeHeader .tagline .a {
   float: left;
-  text-align: left; }
+  text-align: right; }
 
 .homeHeader .tagline .b {
   float: right;
-  text-align: right; }
+  text-align: left; }
 
 .homeHeader .name {
   font-family: Chalet, Oxygen, Arial, Helvetica, sans-serif;
@@ -83,11 +83,11 @@ body {
 
 .homeHeader .name .a {
   float: left;
-  text-align: left; }
+  text-align: right; }
 
 .homeHeader .name .b {
   float: right;
-  text-align: right; }
+  text-align: left; }
 
 .homeHeader img {
   margin-left: auto;
