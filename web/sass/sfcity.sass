@@ -61,6 +61,10 @@ body
   margin: auto
   text-align: left
 
+#body
+  width: $body-width
+  margin: auto
+  text-align: left
 
 
 
@@ -88,6 +92,7 @@ body
 
 .homeHeader .tagline span
   display: block
+  width: $body-width / 3
 
 .homeHeader .tagline .a
   float: left
@@ -100,12 +105,13 @@ body
 
 .homeHeader .name
   font-family: $font-stack-header
-  font-size: 2.5em
+  font-size: 2.2em
 
 .homeHeader .name span
   display: block
-  margin-top: -4.2em
-  text-shadow: 0px 0px 1px #111
+  width: $body-width/2 - $crest-width/2
+  margin-top: -3.2em
+  text-shadow: 0px 0px 2px #333
 
 .homeHeader .name .a
   float: left
@@ -115,9 +121,8 @@ body
   float: right
   text-align: right
 
-
-
 .homeHeader img
+  //opacity: 0
   margin-left: auto
   margin-right: auto
   width: $crest-width
@@ -232,3 +237,11 @@ ul.jcarousel li
 
 .error
   color: $color-crest-primary
+
+.eventDetails
+  padding-left: 20px
+
+.softScript
+  font-style: italic
+  color: #777
+  font-size: 90%

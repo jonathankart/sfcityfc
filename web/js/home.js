@@ -76,6 +76,14 @@
 
 		$('div.jcarousel').jcarousel('scroll', 1,false);
 
+		$('.eventMore').click(function (e){
+			e.preventDefault();
+			var $link = $(this);
+			var index = $link.attr('data-event-index');
+			$('.eventDetails.'+index).slideDown('fast');
+			$link.remove();
+		});
+
 
 	});
 })(jQuery);

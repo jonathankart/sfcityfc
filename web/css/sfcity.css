@@ -32,6 +32,11 @@ body {
   margin: auto;
   text-align: left; }
 
+#body {
+  width: 900px;
+  margin: auto;
+  text-align: left; }
+
 .homeHeaderWrapper {
   height: 292px;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, black), color-stop(1, #333333));
@@ -55,7 +60,8 @@ body {
   text-transform: uppercase; }
 
 .homeHeader .tagline span {
-  display: block; }
+  display: block;
+  width: 300px; }
 
 .homeHeader .tagline .a {
   float: left;
@@ -67,12 +73,13 @@ body {
 
 .homeHeader .name {
   font-family: Chalet, Oxygen, Arial, Helvetica, sans-serif;
-  font-size: 2.5em; }
+  font-size: 2.2em; }
 
 .homeHeader .name span {
   display: block;
-  margin-top: -4.2em;
-  text-shadow: 0px 0px 1px #111111; }
+  width: 336px;
+  margin-top: -3.2em;
+  text-shadow: 0px 0px 2px #333333; }
 
 .homeHeader .name .a {
   float: left;
@@ -184,3 +191,11 @@ ul.jcarousel li {
 
 .error {
   color: #ed1c24; }
+
+.eventDetails {
+  padding-left: 20px; }
+
+.softScript {
+  font-style: italic;
+  color: #777777;
+  font-size: 90%; }

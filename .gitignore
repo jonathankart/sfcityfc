@@ -2,3 +2,4 @@
 conf/pw.php
 *.log
 .sass-cache
+*.coreylib

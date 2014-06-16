@@ -9,6 +9,8 @@ unzip master.zip;
 cp -rf sfcityfc-master/* .
 mkdir logs;
 chmod 777 logs;
+mkdir cache;
+chmod 777  cache;
 date > web/REVISION;
 
 # this effectively unmaint's the site
