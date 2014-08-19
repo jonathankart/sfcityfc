@@ -46,8 +46,13 @@ $app->get('/', function (Request $request) use ($app,$events) {
 });
 
 $app->get('/npsl-application', function (Request $request) use ($app,$events) {
-	$file = $app->config->documents_dir."sfcityfc-npsl-application-2015.pdf";
-	return $app->sendFile($file,200, array('Content-type' => 'application/pdf'), 'attachment');
+	try{
+		$file = $app->config->documents_dir."sfcityfc-npsl-application-2015.pdf";
+		return $app->sendFile($file,200, array('Content-type' => 'application/pdf'), 'attachment');
+	}catch (Exception $e){
+		var_dump($e->getMessage());
+	}
+
 });
 
 $app->get('/ussf-appeal', function (Request $request) use ($app,$events) {
