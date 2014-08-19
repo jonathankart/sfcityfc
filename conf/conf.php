@@ -1,12 +1,17 @@
 <?php
 
+error_reporting(E_ERROR);
+date_default_timezone_set('America/Los_Angeles');
+
 // add conf params as needed
 // $SFCITY_CONFIG->some->thing = 'a value';
 
 define('SFCITY_ROOT_PATH',realpath(__DIR__."/..")."/");
 
+$SFCITY_CONFIG->web_dir = SFCITY_ROOT_PATH."web/";
 $SFCITY_CONFIG->log_dir = SFCITY_ROOT_PATH."logs/";
 $SFCITY_CONFIG->cache_dir = SFCITY_ROOT_PATH."cache/";
+$SFCITY_CONFIG->documents_dir = $SFCITY_CONFIG->web_dir."docs/";
 
 $SFCITY_CONFIG->mailchimp->log = $SFCITY_CONFIG->log_dir."mailchimp.log";
 

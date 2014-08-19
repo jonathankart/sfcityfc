@@ -42,10 +42,17 @@ $events = function ($nocache=false) use ($app){
 };
 
 $app->get('/', function (Request $request) use ($app,$events) {
-
-
-
 	return $app['twig']->render('home.twig',array('events'=>$events($request->get('nocache'))));
+});
+
+$app->get('/npsl-application', function (Request $request) use ($app,$events) {
+	$file = $app->config->documents_dir."sfcityfc-npsl-application-2015.pdf";
+	return $app->sendFile($file,200, array('Content-type' => 'application/pdf'), 'attachment');
+});
+
+$app->get('/ussf-appeal', function (Request $request) use ($app,$events) {
+	$file = $app->config->documents_dir."sfcity-ussf-appeal-2015.pdf";
+	return $app->sendFile($file,200, array('Content-type' => 'application/pdf'), 'attachment');
 });
 
 $app->post('/subscribe',function (Request $request) use ($app){

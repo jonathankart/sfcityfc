@@ -1,201 +1,314 @@
 @font-face {
-  font-family: Chalet;
-  src: url("/resources/fonts/chaletlondonnineteensixty.woff");
-  font-weight: bold; }
-h3.pageTitle {
-  margin-top: 0; }
-
-a {
-  text-decoration: none;
-  color: #006699; }
-
-a:hover, .navMenu a:hover {
-  color: #ed1c24; }
+	font-family: 'League Gothic';
+	src: url('../resources/fonts/leaguegothic-regular-webfont.eot');
+	src: url('../resources/fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../resources/fonts/leaguegothic-regular-webfont.woff') format('woff'), url('../resources/fonts/leaguegothic-regular-webfont.ttf') format('truetype'), url('../resources/fonts/leaguegothic-regular-webfont.svg') format('svg');
+}
+@font-face {
+	font-family: 'Chalet';
+	src: url('../resources/fonts/chaletlondonnineteensixty-webfont.eot');
+	src: url('../resources/fonts/chaletlondonnineteensixty-webfont.eot?#iefix') format('embedded-opentype'), url('../resources/fonts/chaletlondonnineteensixty-webfont.woff') format('woff'), url('../resources/fonts/chaletlondonnineteensixty-webfont.ttf') format('truetype'), url('../resources/fonts/chaletlondonnineteensixty-webfont.svg') format('svg');
+}
 
 body {
-  font: 100% Lato, Arial, Helvetica, sans-serif;
-  color: #333333;
-  margin: 0;
-  padding: 0; }
+	font-family: "Chalet", Helvetica, Arial, sans-serif;
+}
+h1,
+h2,
+h3 {
+	font-family: "League Gothic", Impact, sans-serif;
+	text-transform: uppercase;
+}
+a {
+	transition: color 0.3s,opacity 0.3s;
+}
+a:hover {
+	text-decoration: none;
+}
+iframe {
+	max-width: 100%;
+}
+.banner {
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+}
+.banner .image-container {
+	display: block;
+	height: 215px;
+	overflow: hidden;
+	position: relative;
+}
+.banner .image-container .social-media-icons {
+	position: absolute;
+	right: 30px;
+	top: 0;
+	width: 145px;
+	z-index: 10;
+}
+.banner .image-container .social-media-icons li {
+	list-style: none;
+	float: left;
+	height: 30px;
+	padding-left: 5px;
+	width: 35px;
+}
+.banner .image-container .social-media-icons li a {
+	display: block;
+}
+.banner .image-container .social-media-icons li a:hover {
+	opacity: 0.7;
+}
+.banner .image-container > img {
+	margin-left: -1500px;
+	position: absolute;
+	left: 50%;
+}
+.banner h1,
+.banner h2 {
+	margin: 0;
+	padding: 10px 15px;
+}
+.banner h1 {
+	background-color: #fff200;
+	border-bottom: 2px solid #000;
+	font-size: 45px;
+}
+.banner h2 {
+	background-color: #ed1c24;
+	font-size: 28px;
+	height: 54px;
+	line-height: 34px;
+}
+#sticky-nav {
+	background-color: #000;
+	font: 22px "League Gothic", Impact, sans-serif;
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	text-transform: uppercase;
+	z-index: 10;
+}
+#sticky-nav .logo {
+	text-align: center;
+}
+#sticky-nav .logo a {
+	bottom: 8px;
+	display: block;
+	left: 50%;
+	margin-left: -73px;
+	position: absolute;
+	padding: 0;
+}
+#sticky-nav .logo a img {
+	max-height: 200px;
+}
+#sticky-nav.affix {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+#sticky-nav.affix .logo a {
+	bottom: auto;
+	margin-left: -24px !important;
+	top: 4px;
+}
+#sticky-nav.affix .logo a img {
+	max-height: 64px !important;
+}
+#sticky-nav .nav-container {
+	margin: 0 auto;
+	max-width: 680px;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"] {
+	float: left;
+	padding: 0;
+	margin: 0;
+	width: 50%;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"][class*="-left"] {
+	padding-right: 40px;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"][class*="-left"] li {
+	float: right;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"][class*="-right"] {
+	padding-left: 40px;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"][class*="-right"] li {
+	float: left;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"] li {
+	list-style: none;
+	padding: 10px 5px;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"] li a {
+	color: #fff;
+	position: relative;
+}
+#sticky-nav .nav-container ul[class*="custom-nav"] li a:hover {
+	background: none;
+	color: #fff200;
+}
+.section-video {
+	margin-top: 56px;
+	padding: 25px 0;
+}
+.section-join {
+	background-color: #666;
+	padding: 25px 0;
+}
+.section-join h3 {
+	color: #fff200;
+	font-size: 35px;
+}
 
-#bodyWrapper {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #666666), color-stop(1.5%, white));
-  background-image: -o-linear-gradient(bottom, #666666 0%, white 1.5%);
-  background-image: -moz-linear-gradient(bottom, #666666 0%, white 1.5%);
-  background-image: -webkit-linear-gradient(bottom, #666666 0%, white 1.5%);
-  background-image: -ms-linear-gradient(bottom, #666666 0%, white 1.5%);
-  background-image: linear-gradient(to bottom, #666666 0%, white 1.5%);
-  padding-top: 30px; }
+.section-join h4 {
+	color: #fff200;
+}
 
-#body {
-  width: 900px;
-  margin: auto;
-  text-align: left; }
+.section-join p,.section-join ul {
+	color: #fff;
+}
 
-#body {
-  width: 900px;
-  margin: auto;
-  text-align: left; }
+.section-join ul {
+	font-size: 12px;
+}
+.section-join .mailing-list input {
+	background-color: #eee;
+	border: none;
+	margin-bottom: 12px;
+	padding: 5px;
+	width: 100%;
+}
+.section-details {
+	padding: 25px 0;
+}
+.section-details .upcoming-events h3 {
+	color: #ed1c24;
+	font-size: 35px;
+	line-height: 24px;
+	margin: 20px 0 0;
+}
+.section-details .upcoming-events ul {
+	background-color: #ed1c24;
+	color: #fff;
+	padding: 20px;
+}
+.section-details .upcoming-events ul li {
+	list-style: none;
+	margin-bottom: 12px;
+}
+.section-details .upcoming-events ul li h4{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.section-details .upcoming-events ul li a{
+	color: #ccc;
+}
+.section-details .upcoming-events ul li a:hover{
+	color: #333;
+}
+.section-boardmembers {
+	background-color: #ed1c24;
+	color: #fff;
+	padding: 15px 0 30px;
+}
+.section-boardmembers h3 {
+	font-size: 35px;
+}
+.section-boardmembers ul {
+	margin: 0;
+	padding: 0;
+}
+.section-boardmembers ul li {
+	line-height: 1.5;
+	list-style: none;
+}
+footer {
+	background: #000;
+	text-align: center;
+}
+footer ul {
+	margin: 0;
+	padding: 15px 0;
+}
+footer ul li {
+	display: block;
+	list-style: none;
+}
+footer ul li a {
+	color: #fff200;
+	font-size: 18px;
+	text-decoration: none;
+}
+footer ul li a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.banner h1,
+	.banner h2 {
+		display: inline-block;
+		left: 50%;
+		padding: 10px 15px;
+		position: absolute;
+		z-index: 10;
+	}
+	.banner h1 {
+		bottom: 54px;
+		margin-left: -380px;
+	}
+	.banner h1 span {
+		display: inline-block;
+		text-align: left;
+		width: 260px;
+	}
+	.banner h1 span:first-child {
+		margin-right: 195px;
+		text-align: right;
+	}
+	.banner h2 {
+		bottom: 0;
+		font-size: 30px;
+		height: 54px;
+		margin-left: -320px;
+	}
+	.banner h2 span {
+		display: inline-block;
+		text-align: left;
+		width: 210px;
+	}
+	.banner h2 span:first-child {
+		margin-right: 175px;
+		text-align: right;
+	}
+	#sticky-nav {
+		font-size: 30px;
+	}
+	#sticky-nav .logo a {
+		margin-left: -95px;
+	}
+	#sticky-nav .logo a img {
+		max-height: none;
+	}
+	#sticky-nav .nav-container ul[class*="custom-nav"] li {
+		padding: 10px 15px;
+	}
+	footer ul li {
+		color: #fff;
+		display: inline-block;
+	}
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 
-.homeHeaderWrapper {
-  height: 292px;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, black), color-stop(1, #333333));
-  background-image: -o-linear-gradient(bottom, black 0%, #333333 100%);
-  background-image: -moz-linear-gradient(bottom, black 0%, #333333 100%);
-  background-image: -webkit-linear-gradient(bottom, black 0%, #333333 100%);
-  background-image: -ms-linear-gradient(bottom, black 0%, #333333 100%);
-  background-image: linear-gradient(to bottom, black 0%, #333333 100%);
-  text-align: center;
-  color: #ed1c24; }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 
-.homeHeader {
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.homeHeader .tagline {
-  font-family: Chalet, Oxygen, Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  padding-top: 10px;
-  text-transform: uppercase; }
-
-.homeHeader .tagline span {
-  display: block;
-  width: 336px; }
-
-.homeHeader .tagline .a {
-  float: left;
-  text-align: right; }
-
-.homeHeader .tagline .b {
-  float: right;
-  text-align: left; }
-
-.homeHeader .name {
-  font-family: Chalet, Oxygen, Arial, Helvetica, sans-serif;
-  font-size: 2.2em; }
-
-.homeHeader .name span {
-  display: block;
-  width: 336px;
-  margin-top: -3.2em;
-  text-shadow: 0px 0px 2px #333333; }
-
-.homeHeader .name .a {
-  float: left;
-  text-align: right; }
-
-.homeHeader .name .b {
-  float: right;
-  text-align: left; }
-
-.homeHeader img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 228px;
-  height: 312px; }
-
-.sidebar {
-  position: relative;
-  float: right; }
-
-.content-wrapper {
-  border-left: 2px solid #b20000;
-  border-right: 2px solid #b20000;
-  margin: 0 auto;
-  width: 550px;
-  text-align: left; }
-
-.content-border {
-  border-top: 2px solid #b20000;
-  width: 10%; }
-
-.content-border-l {
-  margin-left: -2px;
-  float: left; }
-
-.content-border-r {
-  float: right;
-  margin-right: -2px; }
-
-.content {
-  padding: 25px; }
-
-.subscribeWidget input {
-  width: 100%; }
-
-.pure-button-primary {
-  background-color: #006699;
-  color: #fff201; }
-
-#footer {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 500px; }
-
-#footer a {
-  margin: 0 10px; }
-
-.socialWidget {
-  clear: both;
-  min-height: 29px;
-  margin-bottom: 10px; }
-
-.socialWidget a {
-  display: block;
-  margin-left: 34px; }
-
-.fbLogo {
-  display: block;
-  float: left;
-  background: url("/images/fb_logo.png") center center no-repeat;
-  height: 29px;
-  width: 29px; }
-
-.twitterLogo {
-  display: block;
-  float: left;
-  background: url("/images/twitter_logo.png") #55acee center center no-repeat;
-  height: 29px;
-  width: 29px; }
-
-div.jcarousel {
-  position: relative;
-  overflow: hidden;
-  width: 500px; }
-
-ul.jcarousel {
-  width: 20000em;
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-ul.jcarousel li {
-  /* Required only for block elements like <li>'s */
-  float: left;
-  width: 500px; }
-
-.navMenu {
-  text-align: left;
-  float: left; }
-
-.navMenu a {
-  font-size: 1.2em;
-  font-family: Chalet, Oxygen, Arial, Helvetica, sans-serif;
-  display: block;
-  color: #333333; }
-
-.navMenu a.active {
-  color: #b20000; }
-
-.error {
-  color: #ed1c24; }
-
-.eventDetails {
-  padding-left: 20px; }
-
-.softScript {
-  font-style: italic;
-  color: #777777;
-  font-size: 90%; }
+}

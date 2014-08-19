@@ -3,47 +3,6 @@
 		/*
 		 Carousel initialization
 		 */
-		$('div.jcarousel')
-			.jcarousel({
-				// Options go here
-				index: 1
-			});
-
-
-
-
-		$('div.jcarousel').on('jcarousel:animateend', function(event, carousel) {
-
-			carousel._target.css({height:'auto'});
-			var height =carousel._target.height();
-
-			carousel._target.siblings().each(function(item){
-				$(this).animate({height:height+'px'},'fast');
-			});
-
-		});
-
-
-
-		$('div.jcarousel-pagination').jcarouselPagination({
-			item: function(page,items) {
-				return '<a href="#' + page + '">' + items.attr('title') + '</a>';
-			}
-		});
-
-		/*
-		 Pagination initialization
-		 */
-		$('div.jcarousel-pagination')
-			.on('jcarouselpagination:active', 'a', function() {
-				$(this).addClass('active');
-			})
-			.on('jcarouselpagination:inactive', 'a', function() {
-				$(this).removeClass('active');
-			})
-			.jcarouselPagination({
-				// Options go here
-			});
 
 		$('.subscribeWidget form').submit(function(e){
 			e.preventDefault();
@@ -74,14 +33,24 @@
 			});
 		});
 
-		$('div.jcarousel').jcarousel('scroll', 1,false);
-
 		$('.eventMore').click(function (e){
 			e.preventDefault();
 			var $link = $(this);
 			var index = $link.attr('data-event-index');
-			$('.eventDetails.'+index).slideDown('fast');
+			$('.eventDescription.'+index).slideDown('fast');
 			$link.remove();
+		});
+
+		$("#grievance-link").click(function(e){
+			e.preventDefault();
+			$("#grievance-explanation").slideDown();
+		});
+
+		$("#grievance-complete").click(function(e){
+			e.preventDefault();
+			$("#grievance-explanation").slideUp(400,function(){
+				$("a[href='#join']").click();
+			});
 		});
 
 
