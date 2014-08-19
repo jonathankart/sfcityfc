@@ -81,7 +81,7 @@ iframe {
 }
 #sticky-nav {
 	background-color: #000;
-	font: 22px "League Gothic", Impact, sans-serif;
+	font: 20px "League Gothic", Impact, sans-serif;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -185,6 +185,7 @@ iframe {
 .section-details {
 	padding: 25px 0;
 }
+
 .section-details .upcoming-events h3 {
 	color: #ed1c24;
 	font-size: 35px;
