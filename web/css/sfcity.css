@@ -227,6 +227,14 @@ iframe {
 	line-height: 1.5;
 	list-style: none;
 }
+
+.section-boardmembers ul li a{
+	color: #ccc;
+}
+.section-boardmembers ul li a:hover{
+	color: #333;
+}
+
 footer {
 	background: #000;
 	text-align: center;
