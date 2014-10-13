@@ -1,0 +1,14 @@
+{% for t in updates['text'] %}
+    <div>
+
+        <h4>{{ t.title }} <small> on {{ t.date|date('n/d @ g:ia') }}</small></h4>
+        <p>
+            {{ t.body|raw }}
+        </p>
+
+
+    </div>
+
+{% endfor %}
+
+

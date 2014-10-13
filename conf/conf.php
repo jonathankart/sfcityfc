@@ -25,3 +25,4 @@ $SFCITY_CONFIG->mailchimp->log = $SFCITY_CONFIG->log_dir."mailchimp.log";
 $SFCITY_CONFIG->calendar->feed = 'http://www.google.com/calendar/feeds/sfcityfc.com_s0qunhs03spt448ukbr1n19cbg%40group.calendar.google.com/public/full-noattendees?futureevents=true';
 $SFCITY_CONFIG->calendar->cache_time = "20 minutes";
 
+

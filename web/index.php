@@ -18,7 +18,6 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 	'twig.debug'	=>	true
 ));
 
-
 $events = function ($nocache=false) use ($app){
 	$api = new clApi(
 		$app->config->calendar->feed,
@@ -41,8 +40,40 @@ $events = function ($nocache=false) use ($app){
 	return array_values($events);
 };
 
-$app->get('/', function (Request $request) use ($app,$events) {
-	return $app['twig']->render('home.twig',array('events'=>$events($request->get('nocache'))));
+
+$updates = function () use ($app){
+
+	$posts = array();
+
+	if($app->config->tumblr->enabled){
+		$tumblr = new Tumblr\API\Client($app->config->tumblr->api_key, $app->config->tumblr->api_secret);
+
+		$options['limit'] = 3;
+		$options['type'] = 'text';
+		$posts['text'] = $tumblr->getBlogPosts($app->config->tumblr->blog_name,$options)->posts;
+
+		$options['limit'] = 9;
+		$options['type'] = 'photo';
+		$posts['photo'] = $tumblr->getBlogPosts($app->config->tumblr->blog_name,$options)->posts;
+
+
+		foreach($posts['photo'] as &$post){
+			foreach($post->photos as &$p){
+				$p->url = $p->alt_sizes[count($p->alt_sizes)-1]->url;
+			}
+		}
+	}
+
+	return $posts;
+};
+
+
+
+$app->get('/', function (Request $request) use ($app,$events,$updates) {
+	return $app['twig']->render('home.twig',array(
+		'events'=>$events($request->get('nocache')),
+		'updates'=> $updates()
+	));
 });
 
 $app->get('/npsl-application', function (Request $request) use ($app,$events) {

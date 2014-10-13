@@ -3,6 +3,7 @@
         "silex/silex": "~1.1",
         "symfony/validator": "~2.3",
         "symfony/twig-bridge": "~2.3",
-		"mailchimp/mailchimp": "2.0.5"
+		"mailchimp/mailchimp": "2.0.5",
+		"tumblr/tumblr": "dev-master"
     }
 }

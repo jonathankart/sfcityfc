@@ -1,0 +1,6 @@
+{% for post in updates['photo'] %}
+    {% for photo in post.photos %}
+        <img src="{{ photo.url }}" />
+
+    {% endfor %}
+{% endfor %}

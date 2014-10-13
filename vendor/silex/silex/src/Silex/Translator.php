@@ -34,4 +34,15 @@ class Translator extends BaseTranslator
     {
         return $this->app['locale'];
     }
+
+    public function setLocale($locale)
+    {
+        if (null === $locale) {
+            return;
+        }
+
+        $this->app['locale'] = $locale;
+
+        parent::setLocale($locale);
+    }
 }
