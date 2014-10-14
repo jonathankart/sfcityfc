@@ -9,7 +9,6 @@ require_once __DIR__."/../vendor/coreylib/coreylib.php";
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Request;
-use Tumblr\API\Client;
 
 $app = new Silex\Application();
 $app->config = $SFCITY_CONFIG;

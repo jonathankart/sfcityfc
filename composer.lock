@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "38ca99b3012e23aa7d53866fda277f9b",
+    "hash": "c3f248a4df01355f65b84fad53e9b22e",
     "packages": [
         {
             "name": "eher/oauth",
@@ -966,16 +966,16 @@
         },
         {
             "name": "tumblr/tumblr",
-            "version": "dev-master",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tumblr/tumblr.php.git",
-                "reference": "32fef6e6fb047371607a33e5665bf72da7dbad7d"
+                "reference": "73872efbd637b65366a593ae5454df0cb883f226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tumblr/tumblr.php/zipball/32fef6e6fb047371607a33e5665bf72da7dbad7d",
-                "reference": "32fef6e6fb047371607a33e5665bf72da7dbad7d",
+                "url": "https://api.github.com/repos/tumblr/tumblr.php/zipball/73872efbd637b65366a593ae5454df0cb883f226",
+                "reference": "73872efbd637b65366a593ae5454df0cb883f226",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 "sdk",
                 "tumblr"
             ],
-            "time": "2014-08-12 07:19:42"
+            "time": "2013-07-15 15:36:55"
         },
         {
             "name": "twig/twig",
@@ -1074,9 +1074,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "tumblr/tumblr": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []
