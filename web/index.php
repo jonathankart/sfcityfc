@@ -45,7 +45,7 @@ $updates = function () use ($app){
 
 	$posts = array();
 
-	if(false && $app->config->tumblr->enabled){
+	if($app->config->tumblr->enabled){
 		$tumblr = new Tumblr\API\Client($app->config->tumblr->api_key, $app->config->tumblr->api_secret);
 
 		$options['limit'] = 3;
@@ -76,16 +76,16 @@ $app->get('/', function (Request $request) use ($app,$events,$updates) {
 	));
 });
 
-$app->get('/tumblr-test', function(Request $request) use ($app){
-	$tumblr = new Tumblr\API\Client($app->config->tumblr->api_key, $app->config->tumblr->api_secret);
-
-	$options['limit'] = 3;
-	$options['type'] = 'text';
-	$posts['text'] = $tumblr->getBlogPosts($app->config->tumblr->blog_name,$options)->posts;
-
-	return '<pre>'.var_export($posts,true).'</pre>';
-
-});
+//$app->get('/tumblr-test', function(Request $request) use ($app){
+//	$tumblr = new Tumblr\API\Client($app->config->tumblr->api_key, $app->config->tumblr->api_secret);
+//
+//	$options['limit'] = 3;
+//	$options['type'] = 'text';
+//	$posts['text'] = $tumblr->getBlogPosts($app->config->tumblr->blog_name,$options)->posts;
+//
+//	return '<pre>'.var_export($posts,true).'</pre>';
+//
+//});
 
 $app->get('/npsl-application', function (Request $request) use ($app,$events) {
 	$file = $app->config->documents_dir."sfcityfc-npsl-application-2015.pdf";
