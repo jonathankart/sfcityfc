@@ -9,15 +9,15 @@
     {% for e in events %}
         <li class="event-item">
             <div class="event-date">{{ e.when|date('n/d g:ia') }}</div>
-            <h4>{{ e.title }}</h4>
+            <h4>{{ e.title|raw }}</h4>
             <div class="event-details">
                 {% if e.where !='' %}
-                    @ <a target="_blank" href="http://maps.google.com/maps?q={{ e.where }}">{{ e.where }}</a>
+                    @ <a target="_blank" href="http://maps.google.com/maps?q={{ e.where|raw }}">{{ e.where|raw }}</a>
                 {% endif %}
 
                 {% if e.description !='' %}
                     <a href="#" class="eventMore softScript" data-event-index="{{ loop.index }}">more...</a>
-                    <div class="eventDescription {{ loop.index }}" style="display: none">{{ e.description }}</div>
+                    <div class="eventDescription {{ loop.index }}" style="display: none">{{ e.description|raw }}</div>
                 {% endif %}
             </div>
         </li>

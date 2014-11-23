@@ -19,6 +19,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 
 $events = function ($nocache=false) use ($app){
+
 	$api = new clApi(
 		$app->config->calendar->feed,
 		new clFileCache($app->config->cache_dir));
@@ -26,16 +27,23 @@ $events = function ($nocache=false) use ($app){
 
 	if ($feed = $api->parse($nocache ? -1 : $app->config->calendar->cache_time)) {
 		foreach($feed->get('entry') as $e){
+
+			$content = $e->get('content');
+
+			preg_match('/when:(.*)/i',$content,$when);
+			preg_match('/where:(.*)/i',$content,$where);
+			preg_match('/description:(.*)/i',$content,$description);
+			$when = explode(' to ',$when[1]);
 			$start_time = $e->get('when@startTime');
 			$events[strtotime($start_time)] = array(
 				'title' => $e->get('title'),
-				'description'=>$e->get('content'),
-				'when' => $start_time,
-				'where' => $e->get('where@valueString'),
+				'description'=>trim($description[1]),
+				'when' => strtotime(trim($when[0])),
+				'where' => trim($where[1]),
 			);
 		}
 	}
-
+	
 	ksort($events);
 	return array_values($events);
 };
