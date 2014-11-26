@@ -34,11 +34,11 @@ $events = function ($nocache=false) use ($app){
 			preg_match('/where:(.*)/i',$content,$where);
 			preg_match('/description:(.*)/i',$content,$description);
 			$when = explode(' to ',$when[1]);
-			$start_time = $e->get('when@startTime');
-			$events[strtotime($start_time)] = array(
+			$start_time = strtotime(trim($when[0]));
+			$events[$start_time] = array(
 				'title' => $e->get('title'),
 				'description'=>trim($description[1]),
-				'when' => strtotime(trim($when[0])),
+				'when' => $start_time,
 				'where' => trim($where[1]),
 			);
 		}
